@@ -1,0 +1,8 @@
+name: advent-of-code
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - fire==0.4.0
+      - Jinja2==3.0.3
