@@ -10,12 +10,12 @@ def convert_problem_input(problem_input_raw):
     return tools.convert_input_simple(problem_input_raw)
 
 
-def solve_part_1(depths: list):
-    current_depth = depths[0]
+def solve_part_1(problem_input: list):
+    current_depth = problem_input[0]
     depth_increases = 0
 
-    for idx in range(1, len(depths)):
-        new_depth = depths[idx]
+    for idx in range(1, len(problem_input)):
+        new_depth = problem_input[idx]
         if new_depth > current_depth:
             depth_increases += 1
         current_depth = new_depth
@@ -23,13 +23,13 @@ def solve_part_1(depths: list):
     return depth_increases
 
 
-def solve_part_2(depths: list):
-    current_depth_window = sum(depths[0:3])
+def solve_part_2(problem_input: list):
+    current_depth_window = sum(problem_input[0:3])
     depth_increases = 0
 
-    for idx in range(3, len(depths)):
-        new_depth = depths[idx]
-        new_depth_window = current_depth_window - depths[idx - 3] + new_depth
+    for idx in range(3, len(problem_input)):
+        new_depth = problem_input[idx]
+        new_depth_window = current_depth_window - problem_input[idx - 3] + new_depth
         if new_depth_window > current_depth_window:
             depth_increases += 1
         current_depth_window = new_depth_window
