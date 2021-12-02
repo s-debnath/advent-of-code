@@ -19,7 +19,7 @@ def generate(year: int, day: int):
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIRECTORY)))
     template = env.get_template('problem.template')
     template_output = template.render(year=year, day=day)
-    with problem_folder.joinpath('problem.py').open(mode='w') as template_file:
+    with problem_folder.joinpath(f'problem_{year}_{day}.py').open(mode='w') as template_file:
         template_file.write(template_output)
 
     os.system(f'aoc download --file {problem_folder}/input --year {year} --day {day}')
