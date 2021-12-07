@@ -27,3 +27,18 @@ def cast_simple(unknown):
             return maybe_float
     else:
         return str(unknown)
+
+
+def convert_input_str(problem_input: list):
+    return [str(line).strip() for line in problem_input]
+
+
+class Node:
+
+    def __init__(self, val, next_ptr=None):
+        self.val = val
+        self.next_ptr = next_ptr
+
+    def append(self, next_ptr=None):
+        self.next_ptr = next_ptr
+        return next_ptr
